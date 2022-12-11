@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/4328465e5b.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="index.css">
+    <title>Lista de recordatorios</title>
+</head>
+<body>
+    <header>
+        <h1>Proyecto recordatorio.js - Carlos Moreno López</h1>
+        <input type="text" id="tarea" placeholder="¿Qué quieres recordar?">
+    </header>
+    <hr>
+        <p id="tareas"><i class="fa-solid fa-chart-column"></i> <span id="pendientes"></span>&nbsp;|&nbsp;<span id="deleteAll"><i class="fa-solid fa-x"></i> Borrar tareas completadas</span></p>
+    <hr>
+    <main>
+        <div id="recordatorios"></div>
+    </main>
+    <footer>
+        <p>Desarrollado por "Carlos Moreno López"</p>
+        <p>Código disponible en <a href="https://github.com/carlosmorenolopez7/To-do-List"><i class="fa-brands fa-github"></i> GitHub</a>.</p>
+    </footer>
+    <script src="index.js"></script>
+</body>
+</html>

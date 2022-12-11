@@ -1,0 +1,110 @@
+body{
+    background-color: #222222;
+    color: #FFFFFF;
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 2rem;
+}
+
+h1{
+    font-size: 1.5remm;
+}
+
+input{
+    width: 90%;
+    padding: 1.5rem;
+    font-size: 1.5rem;
+    border-radius: 1rem;
+}
+
+#tareas #deleteAll{
+    color: orange;
+}
+
+#tareas #deleteAll:hover{
+    cursor: pointer;
+}
+
+.singleReminder{
+    background-color: #303030;
+    display: flex;
+    flex-direction: column;
+}
+
+.reminder--text{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 2rem;
+    padding-left: 2rem;
+}
+
+.reminder--text h2{
+    font-size: 1.5rem;
+}
+
+.reminder--data{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding-left: 2rem;
+    color: #848484;
+}
+
+.reminder--data button{
+    background-color: #464545;
+    color: white;
+    border: none;
+    padding: 0.3rem;
+    cursor: pointer;
+    color: #848484;
+}
+
+.fa-circle{
+    scale: 2;
+}
+
+.fa-square-minus{
+    color: #E74C3C;
+    scale: 3;
+}
+
+.fa-circle{
+    cursor: pointer;
+}
+
+.fa-check-circle{
+    color: green;
+    scale: 2;
+}
+
+.fa-square-minus:hover{
+    cursor: pointer;
+}
+
+.checked{
+    text-decoration: line-through;
+    color: green;
+}
+
+#low.marked{
+    background-color: green;
+    color: white;
+}
+
+#medium.marked{
+    background-color: blue;
+    color: white;
+}
+
+#high.marked{
+    background-color: red;
+    color: white;
+}
+
+footer{
+    text-align: center;
+}
+
+footer a{
+    color: #0CE3AC;
+}
