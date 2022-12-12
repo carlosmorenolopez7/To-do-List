@@ -18,9 +18,6 @@ h1{
 
 #tareas #deleteAll{
     color: orange;
-}
-
-#tareas #deleteAll:hover{
     cursor: pointer;
 }
 
@@ -30,7 +27,8 @@ h1{
 
 .fa-square-minus{
     color: #E74C3C;
-    scale: 3;
+    scale: 2.5;
+    cursor: pointer;
 }
 
 .fa-circle{
@@ -40,10 +38,6 @@ h1{
 .fa-check-circle{
     color: green;
     scale: 2;
-}
-
-.fa-square-minus:hover{
-    cursor: pointer;
 }
 
 .singleReminder{
