@@ -1,7 +1,7 @@
 body{
     margin: 2rem;
-    background-color: #222222;
-    color: #FFFFFF;
+    background-color: black;
+    color: white;
     font-family: Arial, Helvetica, sans-serif;
 }
 
@@ -26,7 +26,7 @@ h1{
 }
 
 .fa-square-minus{
-    color: #E74C3C;
+    color: red;
     scale: 2.5;
     cursor: pointer;
 }
@@ -43,7 +43,7 @@ h1{
 .singleReminder{
     display: flex;
     flex-direction: column;
-    background-color: #303030
+    background-color: rgb(41, 39, 39)
 }
 
 .reminderContent{
@@ -63,14 +63,14 @@ h1{
     gap: 1rem;
     align-items: center;
     padding-left: 2rem;
-    color: #848484;
+    color: grey;
 }
 
 .reminderOptions button{
     padding: 0.3rem;
     border: none;
     cursor: pointer;
-    background-color: #464545;
+    background-color: rgb(95, 90, 90);
     color: white;
 }
 
@@ -99,5 +99,5 @@ footer{
 }
 
 footer a{
-    color: #0CE3AC;
+    color: lightseagreen;
 }
