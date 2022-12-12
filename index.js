@@ -11,7 +11,7 @@ $(document).ready(function() {
     }
     $("input").keyup(function(e) {
         if (e.keyCode == 13) {
-            addToContainer();
+            addReminder();
             total ++;
             notCompleted ++;
             $("#pendientes").text(`${notCompleted} pendientes de un total de ${total}`);
@@ -87,7 +87,7 @@ $(document).ready(function() {
     changePriority("high");
 });
 
-function addToContainer(){
+function addReminder(){
     var inputContent = $('#tarea').val();
     var container = $('#recordatorios');
     var createdReminder = {
@@ -104,6 +104,17 @@ function addToContainer(){
         reminders.push(createdReminder);
         localStorage.reminders = JSON.stringify(reminders);
     }
+}
+
+function changePriority(priority){
+    $("#recordatorios").on("click", `#${priority}`, function() {
+        $(this).toggleClass("not_marked marked");
+        $(this).siblings().removeClass("marked");
+        $(this).siblings().addClass("not_marked");
+        var index = $(this).parent().parent().index();
+        reminders[index].priority = `${priority}`;
+        localStorage.reminders = JSON.stringify(reminders);
+    });
 }
 
 function saveLocal() {
@@ -130,15 +141,4 @@ function saveLocal() {
         container.append(newReminder);
         newReminder.show('normal');
     }
-}
-
-function changePriority(priority){
-    $("#recordatorios").on("click", `#${priority}`, function() {
-        $(this).toggleClass("not_marked marked");
-        $(this).siblings().removeClass("marked");
-        $(this).siblings().addClass("not_marked");
-        var index = $(this).parent().parent().index();
-        reminders[index].priority = `${priority}`;
-        localStorage.reminders = JSON.stringify(reminders);
-    });
 }
