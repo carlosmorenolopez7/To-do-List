@@ -96,7 +96,7 @@ function addReminder(){
         date: Date.now(),
         completed: false
     }
-    var newReminder = $(`<div class='singleReminder'><div class='reminderContent'><i class='fa-regular fa-circle'></i><h2>${createdReminder.title}</h2><i class='fa-solid fa-square-minus'></i></div><div class='reminderOptions'><p>Prioridad</p><button id='low' class="not_marked"><i class='fa-solid fa-arrow-down'></i> Low</button><button id='medium' class="not_marked">Normal</button><button id='high' class="marked"><i class='fa-solid fa-arrow-up'></i> High</button><i class='fa-regular fa-clock'></i><p>Añadido hace ${Math.floor(((Date.now() - createdReminder.date)/1000)/60)} minutos</p></div></div>`).hide();
+    var newReminder = $(`<div class='singleReminder'><div class='reminderContent'><i class='fa-regular fa-circle'></i><h2>${createdReminder.title}</h2><i class='fa-solid fa-square-minus'></i></div><div class='reminderOptions'><p>Prioridad</p><button id='low' class="not_marked"><i class='fa-solid fa-arrow-down'></i> Low</button><button id='medium' class="marked">Normal</button><button id='high' class="not_marked"><i class='fa-solid fa-arrow-up'></i> High</button><i class='fa-regular fa-clock'></i><p>Añadido hace ${Math.floor(((Date.now() - createdReminder.date)/1000)/60)} minutos</p></div></div>`).hide();
     if(inputContent != ''){
         container.append(newReminder);
         $('#tarea').val('');
