@@ -82,9 +82,6 @@ $(document).ready(function() {
     } else {
             $("#pendientes").text(`0 pendientes de un total de ${total}`);
     }
-    changePriority("low");
-    changePriority("medium");
-    changePriority("high");
 });
 
 function addReminder(){
@@ -129,16 +126,12 @@ function saveLocal() {
             }else if(reminders[i].priority == "high"){
                 var newReminder = $(`<div class='singleReminder'><div class='reminderContent'><i class='fa-regular fa-circle'></i><h2>${reminders[i].title}</h2><i class='fa-solid fa-square-minus'></i></div><div class='reminderOptions'><p>Prioridad</p><button id='low' class="not_marked"><i class='fa-solid fa-arrow-down'></i> Low</button><button id='medium' class="not_marked">Normal</button><button id='high' class="marked"><i class='fa-solid fa-arrow-up'></i> High</button><i class='fa-regular fa-clock'></i><p>Añadido hace ${Math.floor(((Date.now() - reminders[i].date)/1000)/60)} minutos</p></div></div>`).hide();
             }
-        }else {
-            if(reminders[i].priority == "low"){
-                var newReminder = $(`<div class='singleReminder'><div class='reminderContent'><i class='fa-regular fa-check-circle'></i><h2 class="checked">${reminders[i].title}</h2><i class='fa-solid fa-square-minus'></i></div><div class='reminderOptions'><p>Prioridad</p><button id='low' class="marked"><i class='fa-solid fa-arrow-down'></i> Low</button><button id='medium' class="not_marked">Normal</button><button id='high' class="not_marked"><i class='fa-solid fa-arrow-up'></i> High</button><i class='fa-regular fa-clock'></i><p>Añadido hace ${Math.floor(((Date.now() - reminders[i].date)/1000)/60)} minutos</p></div></div>`).hide();
-            }else if(reminders[i].priority == "medium"){
-                var newReminder = $(`<div class='singleReminder'><div class='reminderContent'><i class='fa-regular fa-check-circle'></i><h2 class="checked">${reminders[i].title}</h2><i class='fa-solid fa-square-minus'></i></div><div class='reminderOptions'><p>Prioridad</p><button id='low' class="not_marked"><i class='fa-solid fa-arrow-down'></i> Low</button><button id='medium' class="marked">Normal</button><button id='high' class="not_marked"><i class='fa-solid fa-arrow-up'></i> High</button><i class='fa-regular fa-clock'></i><p>Añadido hace ${Math.floor(((Date.now() - reminders[i].date)/1000)/60)} minutos</p></div></div>`).hide();
-            }else if(reminders[i].priority == "high"){
-                var newReminder = $(`<div class='singleReminder'><div class='reminderContent'><i class='fa-regular fa-check-circle'></i><h2 class="checked">${reminders[i].title}</h2><i class='fa-solid fa-square-minus'></i></div><div class='reminderOptions'><p>Prioridad</p><button id='low' class="not_marked"><i class='fa-solid fa-arrow-down'></i> Low</button><button id='medium' class="not_marked">Normal</button><button id='high' class="marked"><i class='fa-solid fa-arrow-up'></i> High</button><i class='fa-regular fa-clock'></i><p>Añadido hace ${Math.floor(((Date.now() - reminders[i].date)/1000)/60)} minutos</p></div></div>`).hide();
-            }
         }
         container.append(newReminder);
         newReminder.show('normal');
     }
 }
+
+changePriority("low");
+changePriority("medium");
+changePriority("high");
