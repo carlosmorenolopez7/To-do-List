@@ -25,10 +25,9 @@ $(document).ready(function() {
         localStorage.reminders = JSON.stringify(reminders);
         total --;
         notCompleted --;
-
         if(notCompleted > 0){
             $("#pendientes").text(`${notCompleted} pendientes de un total de ${total}`);
-        } else {
+        }else {
             $("#pendientes").text(`0 pendientes de un total de ${total}`);
         }
     });
@@ -54,6 +53,23 @@ $(document).ready(function() {
         notCompleted ++;
         $("#pendientes").text(`${notCompleted} pendientes de un total de ${total}`);
     });
+    $(document).on("click",".marked", function() {
+        var high = [];
+        var medium = [];
+        var low = [];
+        for (var i = 0; i < reminders.length; i++) {
+            if (reminders[i].priority == "high") {
+                high.push(reminders[i]);
+            }else if (reminders[i].priority == "medium") {
+                medium.push(reminders[i]);
+            }else {
+                low.push(reminders[i]);
+            }
+        }
+        reminders = high.concat(medium, low);
+        localStorage.reminders = JSON.stringify(reminders);
+        saveLocal();
+    });
     $("#deleteAll").click(function() {
         var removed = 0;
         $(".fa-check-circle").parent().parent().hide("normal", function() {
@@ -78,9 +94,9 @@ $(document).ready(function() {
         notCompleted++;
     });
     if(notCompleted > 0){
-            $("#pendientes").text(`${notCompleted} pendientes de un total de ${total}`);
+        $("#pendientes").text(`${notCompleted} pendientes de un total de ${total}`);
     } else {
-            $("#pendientes").text(`0 pendientes de un total de ${total}`);
+        $("#pendientes").text(`0 pendientes de un total de ${total}`);
     }
 });
 
@@ -117,6 +133,7 @@ function changePriority(priority){
 function saveLocal() {
     var reminders = JSON.parse(localStorage.getItem('reminders'));
     var container = $('#recordatorios');
+    container.html("");
     for (var i = 0; i < reminders.length; i++) {
         if(reminders[i].completed == false){
             if(reminders[i].priority == "low"){
